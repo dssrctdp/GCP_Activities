@@ -1,0 +1,16 @@
+Getting started...!
+1.go to google cloud console
+2.go to APIs and Services
+3.make sure to enable Deployment manager and compute engine instance
+4.go to google cloud console
+5.download an enable deployment manager template---gsutil cp gs://cloud-training/gcpfcoreinfra/mydeploy.yaml mydeploy.yaml
+6.sed -i -e "s/PROJECT_ID/$DEVSHELL_PROJECT_ID/" mydeploy.yaml    /*we can direct give in yaml file */
+7.sed -i -e "s/ZONE/$MY_ZONE/" mydeploy.yaml    /*we can direct give in yaml file */
+9.nano mydeploy.yaml and changed the instance_name "deva-instance" and changed vpc as "network-vpc" and changed machine type N1-standard-1 to f1 micro(which is created by colleague).
+10.gcloud deployment-manager deployments create my-first-depl --config mydeploy.yaml
+11.go to ssh
+12.sudo apt-get update.
+13.sudo apt-get install nginx.
+14. sudo nano /var/www/html/index.nginx-debin.html.
+15.after going to external link we can able to see the deployed application
+
