@@ -1,0 +1,33 @@
+getting started....
+1.go to kubernrtes engine and create cluster :cluster name :deva-cluster
+					      location  : zonal :us-central1(high availability)
+					      default node pool : enabled autoscaling(high scalability)
+								minimum number of nodes :3 and maximum number of nodes :6
+						in the nodes selected machine type N1 & g1-small and changed boot disk size to 10gb
+						in networking selected Network-vpc and leaving remaining as it is and created cluster.
+2.go to cloud shell and connected my cluster using command :gcloud container clusters get-credentials deva-cluster --zone us-central1-a --project gcp-training-01-303001.
+3.i have cloned the application from github by using :git clone https://github.com/mmumshad/kubernetes-example-voting-app.
+4.the cloned application is already built ready with 9(yaml) files which were labeled such that all ui,fromt end and database(radis) been created.
+5.type ls and checked wheather the application is cloned or not.
+6.cd kubernetes-example-voting-app ..and type ls wheather all the yml files exist/not.
+7. deploying the voting app pod by typing "kubectl apply -f  voting-app-pod.yml " and check with kubectl get pod
+8.deploying the voting app service by command :kubectl apply -f  voting-app-service.yml" and check with kubectl get services.
+9.deploying the radis pod by command :kubectl apply -f  radis-pod.yml"
+10.deploying the radis service by command :kubectl apply -f  radis-service.yml"
+11.deploying the postgress pod by command :kubectl apply -f  postgress-pod.yml"
+12.deploying the postgress service by command :kubectl apply -f  postgress-service.yml"
+13.deploying the worker app pod by command :kubectl apply -f  worker-app-pod.yml"
+14.deploying the result app pod by command :kubectl apply -f  result-app-pod.yml"
+15.deploying the result app service by command :kubectl apply -f  result-app-service.yml"
+16.kubectl get services..there we found load balaancing external ips for voting app and result app
+17.we can poll the vote by using voting app external ip url
+18.we can check the result in result app extwrnal ip url.
+
+Perform rolling out to above deployment :
+19.update the radies master version by using the command : kubectl set image deployment redis-master master=redis:2.0  
+
+20.checking the status of the updated container with command:kubectl rollout status deployment redis-leader  
+21.finally verify the update is happened or not by clicking on the cluster and go to details.
+
+
+ 
