@@ -1,0 +1,9 @@
+Getting started....
+1.go to navigation of the cloud console
+2.go to storage->Browse
+3.create bucket "deva-task-9-bucket"
+4.go to permissions->Add->all users,role cloud storage object viewer role
+5.upload html/static web page (home.html)
+6.edit permissions to public viewer
+7.to made available the url to publiic run the command :  gsutil -m acl ch -r -u Allusers:R gs://deva-task-9-bucket/*
+8.copy the public url and check ur website
